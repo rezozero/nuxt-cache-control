@@ -32,7 +32,8 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.11.1",
-    "defu": "^6.1.4"
+    "defu": "^6.1.4",
+    "nitropack": "^2.9.5"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
