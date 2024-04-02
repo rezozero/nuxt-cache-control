@@ -37,6 +37,25 @@ export default defineNuxtConfig({
 
 That's it! You can now use Nuxt Cache Control in your Nuxt app with `useCacheControl` composable.
 
+```vue
+<script setup>
+/*
+ * Define SSR cache control header for this page
+ */
+useCacheControl({
+    public: true,
+    // 1 hour
+    maxAge: 60 * 60,
+    // 30 minutes
+    sMaxAge: 60 * 30,
+    // SWR for 2 minutes
+    staleWhileRevalidate: 60 * 2,
+})
+</script>
+```
+
+Cache control composable accepts the following options:
+
 ```ts
 export interface CacheControlOptions {
     maxAge?: number // in seconds
