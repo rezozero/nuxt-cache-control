@@ -1,12 +1,13 @@
 import type { CacheControlOptions } from '~/src/runtime/composables/use-cache-control'
 import { getResponseStatus, setResponseHeader, getQuery, parseCookies } from 'h3'
+import type { NitroApp } from 'nitropack'
 
 /*
  * This plugin is used to set the cache control headers for the response.
  * It uses the useCacheControl composable to define cache control options.
  * It also checks for cookies and response status to determine if the response should be cached.
  */
-export default defineNitroPlugin((nitroApp) => {
+export default (nitroApp: NitroApp) => {
     nitroApp.hooks.hook('render:response', (_response, { event }) => {
         const qs = getQuery(event)
 
@@ -55,4 +56,4 @@ export default defineNitroPlugin((nitroApp) => {
             setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
         }
     })
-})
+}
