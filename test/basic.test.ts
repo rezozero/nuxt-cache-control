@@ -81,4 +81,12 @@ describe('ssr', async () => {
         expect(response.headers.get('cache-control')).toContain('no-store')
         expect(response.headers.get('cache-control')).toContain('private')
     })
+
+    it('has private cache-control header when `url` and `statusCode` in QS', async () => {
+        // Get response to a server-rendered page with `$fetch`.
+        const response = await fetch('/?url=https://example.com&statusCode=404')
+        expect(response.headers.keys()).toContain('cache-control')
+        expect(response.headers.get('cache-control')).toContain('no-store')
+        expect(response.headers.get('cache-control')).toContain('private')
+    })
 })
