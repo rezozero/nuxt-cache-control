@@ -1,5 +1,5 @@
 <template>
-  <div>infinite-swr</div>
+    <div>infinite-swr</div>
 </template>
 
 <script setup>

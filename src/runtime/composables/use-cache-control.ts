@@ -6,7 +6,7 @@ import { getCurrentInstance, useSSRContext } from 'vue'
 export interface CacheControlOptions {
     maxAge?: number
     sMaxAge?: number
-    staleWhileRevalidate?: number|true
+    staleWhileRevalidate?: number | true
     public: boolean
 }
 

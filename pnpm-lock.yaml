@@ -8,6 +8,9 @@ dependencies:
   '@nuxt/kit':
     specifier: ^3.11.1
     version: 3.11.1(rollup@3.29.4)
+  defu:
+    specifier: ^6.1.4
+    version: 6.1.4
 
 devDependencies:
   '@nuxt/devtools':

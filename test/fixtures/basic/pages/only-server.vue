@@ -1,5 +1,5 @@
 <template>
-  <div>only-server</div>
+    <div>only-server</div>
 </template>
 
 <script setup>

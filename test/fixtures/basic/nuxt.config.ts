@@ -1,10 +1,8 @@
 import MyModule from '../../../src/module'
 
 export default defineNuxtConfig({
-    modules: [
-        MyModule
-    ],
+    modules: [MyModule],
     cacheControl: {
-        noCacheCookies: ['cart', 'session']
-    }
+        noCacheCookies: ['cart', 'session'],
+    },
 })

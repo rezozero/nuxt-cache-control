@@ -1,4 +1,4 @@
-import type {CacheControlOptions} from '~/src/runtime/composables/use-cache-control'
+import type { CacheControlOptions } from '~/src/runtime/composables/use-cache-control'
 
 /*
  * This plugin is used to set the cache control headers for the response.
@@ -29,16 +29,14 @@ export default defineNitroPlugin((nitroApp) => {
                 public: false,
             } as CacheControlOptions)
         const cookies = parseCookies(event)
-        const noCacheCookies =  useRuntimeConfig().cacheControl.noCacheCookies || []
+        const noCacheCookies = useRuntimeConfig().cacheControl.noCacheCookies || []
         const noCache = noCacheCookies.some((cookie: string) => cookies[cookie])
 
         /*
          * Use useCacheControl composable to define cache control options
          */
         if (!noCache && cacheControl.public) {
-            const cacheControlHeader = [
-                `public`,
-            ]
+            const cacheControlHeader = [`public`]
             if (cacheControl?.maxAge >= 0) {
                 cacheControlHeader.push(`max-age=${cacheControl.maxAge}`)
             }
@@ -51,11 +49,7 @@ export default defineNitroPlugin((nitroApp) => {
             } else if (cacheControl?.staleWhileRevalidate > 0) {
                 cacheControlHeader.push(`stale-while-revalidate=${cacheControl.staleWhileRevalidate}`)
             }
-            setResponseHeader(
-                event,
-                'Cache-Control',
-                cacheControlHeader.join(', ')
-            )
+            setResponseHeader(event, 'Cache-Control', cacheControlHeader.join(', '))
         } else {
             setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
         }
