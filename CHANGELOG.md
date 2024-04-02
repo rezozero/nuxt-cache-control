@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.2
+
+[compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.1...v0.1.2)
+
+### 🩹 Fixes
+
+- Missing nitropack imports for server plugin ([162b02d](https://github.com/rezozero/nuxt-cache-control/commit/162b02d))
+
+### ❤️ Contributors
+
+- Ambroise Maupate <ambroise@rezo-zero.com>
+
 ## v0.1.1
 
 [compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.0.3...v0.1.1)
