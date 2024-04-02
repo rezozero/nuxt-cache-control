@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.6
+
+[compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.5...v0.1.6)
+
+### 🩹 Fixes
+
+- Missing import for `useRuntimeConfig` ([a758173](https://github.com/rezozero/nuxt-cache-control/commit/a758173))
+
+### ❤️ Contributors
+
+- Ambroise Maupate <ambroise@rezo-zero.com>
+
 ## v0.1.5
 
 [compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.4...v0.1.5)
