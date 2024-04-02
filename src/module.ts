@@ -25,6 +25,13 @@ export default defineNuxtModule<ModuleOptions>({
             as: 'useCacheControl',
             from: resolve('runtime/composables/use-cache-control'), // path of composable
         })
-        addServerPlugin(resolve('runtime/server/plugins/cache-control'))
+
+        nuxt.hook('nitro:config', (nitro) => {
+            // ensure `nitro.plugins` is initialized
+            nitro.plugins = nitro.plugins || []
+
+            // add your custom plugin
+            nitro.plugins.push(resolve('runtime/server/plugins/cache-control'))
+        })
     },
 })

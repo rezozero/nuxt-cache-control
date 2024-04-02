@@ -3,13 +3,6 @@ import type { CacheControlOptions } from '~/src/runtime/composables/use-cache-co
 import { getResponseStatus, setResponseHeader, getQuery, parseCookies } from 'h3'
 import { useRuntimeConfig } from 'nitropack/runtime'
 
-// type stub
-type NitroAppPlugin = (nitroApp: NitroApp) => void
-
-function defineNitroPlugin(def: NitroAppPlugin): NitroAppPlugin {
-    return def
-}
-
 /*
  * This plugin is used to set the cache control headers for the response.
  * It uses the useCacheControl composable to define cache control options.
