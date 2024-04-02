@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.1
+
+[compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.0.3...v0.1.1)
+
+### ✅ Tests
+
+- Do not cache when query string contains `url` and `statusCode` ([8083890](https://github.com/rezozero/nuxt-cache-control/commit/8083890))
+
+### ❤️ Contributors
+
+- Ambroise Maupate <ambroise@rezo-zero.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.0.2...v0.0.3)
