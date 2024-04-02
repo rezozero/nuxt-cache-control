@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.4
+
+[compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.3...v0.1.4)
+
+### 🩹 Fixes
+
+- Do not explicitly import nitro-pack ([3b35e9a](https://github.com/rezozero/nuxt-cache-control/commit/3b35e9a))
+
+### ❤️ Contributors
+
+- Ambroise Maupate <ambroise@rezo-zero.com>
+
 ## v0.1.3
 
 [compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.2...v0.1.3)
