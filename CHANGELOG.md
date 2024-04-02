@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.5
+
+[compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.4...v0.1.5)
+
+### 🩹 Fixes
+
+- Do not use `defineNitroPlugin` method, export pure function ([dcd6e6f](https://github.com/rezozero/nuxt-cache-control/commit/dcd6e6f))
+
+### ❤️ Contributors
+
+- Ambroise Maupate <ambroise@rezo-zero.com>
+
 ## v0.1.4
 
 [compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.3...v0.1.4)
