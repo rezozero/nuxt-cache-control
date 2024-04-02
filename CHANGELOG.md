@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.3
+
+[compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.2...v0.1.3)
+
+### 🩹 Fixes
+
+- Nitro plugin should be configured in `nitro:config` hook. https://github.com/nuxt/nuxt/discussions/16780 ([c448075](https://github.com/rezozero/nuxt-cache-control/commit/c448075))
+
+### ❤️ Contributors
+
+- Ambroise Maupate <ambroise@rezo-zero.com>
+
 ## v0.1.2
 
 [compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.1...v0.1.2)

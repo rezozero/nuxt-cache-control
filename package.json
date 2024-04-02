@@ -1,6 +1,6 @@
 {
   "name": "@rezo-zero/nuxt-cache-control",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Declare fine-grained cache control headers for your Nuxt application in each page",
   "license": "MIT",
   "type": "module",
