@@ -43,10 +43,7 @@
     "@types/node": "^24.1.0",
     "changelogen": "^0.6.2",
     "eslint": "^9.31.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.3",
     "nuxt": "^4.0.1",
-    "prettier": "^3.6.2",
     "vitest": "^3.2.4"
   },
   "engines": {
