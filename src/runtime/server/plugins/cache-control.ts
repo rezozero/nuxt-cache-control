@@ -9,52 +9,54 @@ import { useRuntimeConfig } from '#imports'
  * It also checks for cookies and response status to determine if the response should be cached.
  */
 export default (nitroApp: NitroApp) => {
-    nitroApp.hooks.hook('render:response', (_response, { event }) => {
-        const qs = getQuery(event)
+  nitroApp.hooks.hook('render:response', (_response, { event }) => {
+    const qs = getQuery(event)
 
-        if (getResponseStatus(event) !== 200) {
-            setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
-            return
-        }
+    if (getResponseStatus(event) !== 200) {
+      setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
+      return
+    }
 
-        /*
+    /*
          * If the request is a redirect, we don't want to cache it.
          * Or if the request is an error, we don't want to cache it.
          */
-        if (qs.url && qs.statusCode) {
-            setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
-            return
-        }
-        const cacheControl =
-            event.context.cacheControl ||
-            ({
+    if (qs.url && qs.statusCode) {
+      setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
+      return
+    }
+    const cacheControl
+            = event.context.cacheControl
+              || ({
                 maxAge: 0,
                 public: false,
-            } as CacheControlOptions)
-        const cookies = parseCookies(event)
-        const noCacheCookies = useRuntimeConfig().cacheControl.noCacheCookies || []
-        const noCache = noCacheCookies.some((cookie: string) => cookies[cookie])
+              } as CacheControlOptions)
+    const cookies = parseCookies(event)
+    const noCacheCookies = useRuntimeConfig().cacheControl.noCacheCookies || []
+    const noCache = noCacheCookies.some((cookie: string) => cookies[cookie])
 
-        /*
+    /*
          * Use useCacheControl composable to define cache control options
          */
-        if (!noCache && cacheControl.public) {
-            const cacheControlHeader = [`public`]
-            if (cacheControl?.maxAge >= 0) {
-                cacheControlHeader.push(`max-age=${cacheControl.maxAge}`)
-            }
-            if (cacheControl?.sMaxAge >= 0) {
-                cacheControlHeader.push(`s-maxage=${cacheControl.sMaxAge}`)
-            }
-            if (cacheControl?.staleWhileRevalidate === true) {
-                // Infinite stale-while-revalidate
-                cacheControlHeader.push(`stale-while-revalidate`)
-            } else if (cacheControl?.staleWhileRevalidate > 0) {
-                cacheControlHeader.push(`stale-while-revalidate=${cacheControl.staleWhileRevalidate}`)
-            }
-            setResponseHeader(event, 'Cache-Control', cacheControlHeader.join(', '))
-        } else {
-            setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
-        }
-    })
+    if (!noCache && cacheControl.public) {
+      const cacheControlHeader = [`public`]
+      if (cacheControl?.maxAge >= 0) {
+        cacheControlHeader.push(`max-age=${cacheControl.maxAge}`)
+      }
+      if (cacheControl?.sMaxAge >= 0) {
+        cacheControlHeader.push(`s-maxage=${cacheControl.sMaxAge}`)
+      }
+      if (cacheControl?.staleWhileRevalidate === true) {
+        // Infinite stale-while-revalidate
+        cacheControlHeader.push(`stale-while-revalidate`)
+      }
+      else if (cacheControl?.staleWhileRevalidate > 0) {
+        cacheControlHeader.push(`stale-while-revalidate=${cacheControl.staleWhileRevalidate}`)
+      }
+      setResponseHeader(event, 'Cache-Control', cacheControlHeader.join(', '))
+    }
+    else {
+      setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
+    }
+  })
 }
