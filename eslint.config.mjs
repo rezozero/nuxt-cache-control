@@ -11,8 +11,9 @@ export default createConfigForNuxt({
     ],
   },
 }).append({
-  files: ['**/*.ts', '**/*.js', '**/*.mjs', '**/*.jsx', '**/*.tsx'],
+  files: ['**/*.ts', '**/*.js', '**/*.mjs', '**/*.jsx', '**/*.tsx', '**/*.vue'],
   rules: {
+    'vue/multi-word-component-names': 'off',
     '@stylistic/max-len': ['warn', {
       code: 120,
     }],
