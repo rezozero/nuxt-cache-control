@@ -1,5 +1,5 @@
 <template>
-    <div>private</div>
+  <div>private</div>
 </template>
 
 <script setup>
@@ -7,6 +7,6 @@
  * Define SSR cache control header for this page
  */
 useCacheControl({
-    public: false,
+  public: false,
 })
 </script>
