@@ -5,4 +5,5 @@ export default defineNuxtConfig({
         noCacheCookies: ['cart', 'session'],
     },
     devtools: { enabled: true },
+    compatibilityDate: '2025-07-22',
 })

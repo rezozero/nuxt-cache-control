@@ -7,7 +7,7 @@
     "build": "nuxi build",
     "generate": "nuxi generate"
   },
-  "dependencies": {
-    "nuxt": "latest"
+  "devDependencies": {
+    "nuxt": "^4.0.1"
   }
 }
