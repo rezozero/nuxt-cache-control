@@ -1,6 +1,37 @@
 # Changelog
 
 
+## v0.1.7
+
+[compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.6...v0.1.7)
+
+### 🚀 Enhancements
+
+- Use Eslint config flat file ([#4](https://github.com/rezozero/nuxt-cache-control/pull/4))
+
+### 🩹 Fixes
+
+- Missing import for `useRuntimeConfig` ([a758173](https://github.com/rezozero/nuxt-cache-control/commit/a758173))
+
+### 📦 Build
+
+- Upgrade minor and patch deps + Nuxt v3 to v4 ([962b977](https://github.com/rezozero/nuxt-cache-control/commit/962b977))
+- Upgrade all deps (major versions) ([c532042](https://github.com/rezozero/nuxt-cache-control/commit/c532042))
+- Update root tsconfig file ([5dfe9d9](https://github.com/rezozero/nuxt-cache-control/commit/5dfe9d9))
+- Update package.json for new format of types / main module files ([453d747](https://github.com/rezozero/nuxt-cache-control/commit/453d747))
+
+### 🏡 Chore
+
+- **release:** V0.1.6 ([598c0e5](https://github.com/rezozero/nuxt-cache-control/commit/598c0e5))
+- **playground:** Add Nuxt compatibility date ([63855b1](https://github.com/rezozero/nuxt-cache-control/commit/63855b1))
+- Merge pull request #3 from rezozero/feature/nuxt-4 ([#3](https://github.com/rezozero/nuxt-cache-control/issues/3))
+- Remove useless files / dirs ([c8ebdef](https://github.com/rezozero/nuxt-cache-control/commit/c8ebdef))
+
+### ❤️ Contributors
+
+- Manuel Odelain ([@manuelodelain](https://github.com/manuelodelain))
+- Ambroise Maupate <ambroise@rezo-zero.com>
+
 ## v0.1.6
 
 [compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.5...v0.1.6)
