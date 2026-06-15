@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.11
+
+[compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.10...v0.1.11)
+
+### 🩹 Fixes
+
+- **dependencies:** Set h3 version as dependencies instead devDependencies ([17dc0b4](https://github.com/rezozero/nuxt-cache-control/commit/17dc0b4))
+- Revert h3 v2 workarounds ([3ec0589](https://github.com/rezozero/nuxt-cache-control/commit/3ec0589))
+
+### 🏡 Chore
+
+- Lint fix ([c1812b1](https://github.com/rezozero/nuxt-cache-control/commit/c1812b1))
+
+### ❤️ Contributors
+
+- Timothe Joubert <timothejoubert26@gmail.com>
+
 ## v0.1.10
 
 [compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.9...v0.1.10)
