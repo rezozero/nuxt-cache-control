@@ -1,5 +1,5 @@
 import type { CacheControlOptions } from '~/src/runtime/composables/use-cache-control'
-import { getResponseStatus, setResponseHeader, parseCookies } from 'h3'
+import { getResponseStatus, setResponseHeader, getQuery, parseCookies } from 'h3'
 import type { NitroApp } from 'nitropack'
 import { useRuntimeConfig } from '#imports'
 
@@ -10,6 +10,8 @@ import { useRuntimeConfig } from '#imports'
  */
 export default (nitroApp: NitroApp) => {
   nitroApp.hooks.hook('render:response', (_response, { event }) => {
+    const qs = getQuery(event)
+
     if (getResponseStatus(event) !== 200) {
       setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
       return
@@ -19,17 +21,16 @@ export default (nitroApp: NitroApp) => {
          * If the request is a redirect, we don't want to cache it.
          * Or if the request is an error, we don't want to cache it.
          */
-    const searchParams = new URLSearchParams((event.path || '').split('?')[1] || '')
-    if (searchParams.get('url') && searchParams.get('statusCode')) {
+    if (qs.url && qs.statusCode) {
       setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
       return
     }
     const cacheControl
       = event.context.cacheControl
-        || ({
-          maxAge: 0,
-          public: false,
-        } as CacheControlOptions)
+      || ({
+        maxAge: 0,
+        public: false,
+      } as CacheControlOptions)
     const cookies = parseCookies(event)
     const noCacheCookies = useRuntimeConfig().cacheControl.noCacheCookies || []
     const noCache = noCacheCookies.some((cookie: string) => cookies[cookie])
