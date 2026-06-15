@@ -38,10 +38,8 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.0.1",
-    "defu": "^6.1.4"
-  },
-  "peerDependencies": {
-    "h3": ">=1"
+    "defu": "^6.1.4",
+    "h3": "^1.15.11"
   },
   "devDependencies": {
     "@nuxt/devtools": "^2.6.2",
@@ -53,7 +51,6 @@
     "@types/node": "^24.1.0",
     "changelogen": "^0.6.2",
     "eslint": "^9.31.0",
-    "h3": "^1.15.11",
     "nuxt": "^4.0.1",
     "vitest": "^3.2.4"
   },
