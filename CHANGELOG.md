@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.1.10
+
+[compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.9...v0.1.10)
+
+### 💅 Refactors
+
+- **cache-control:** Remove unused getRequestURL import and simplify query string handling ([9e7f315](https://github.com/rezozero/nuxt-cache-control/commit/9e7f315))
+
+### ❤️ Contributors
+
+- Timothe Joubert <timothejoubert26@gmail.com>
+
 ## v0.1.8
 
 [compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.8...v0.1.8)
