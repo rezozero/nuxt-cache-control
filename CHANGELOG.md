@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.1.8
+
+[compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.8...v0.1.8)
+
+### 🩹 Fixes
+
+- Replace getQuery with getRequestURL for h3 v1/v2 compatibility ([267e275](https://github.com/rezozero/nuxt-cache-control/commit/267e275))
+- **cache-control:** Format code for better readability in cache control plugin ([7570cc0](https://github.com/rezozero/nuxt-cache-control/commit/7570cc0))
+
+### 📦 Build
+
+- Update deps and update lockfile with explicit h3 devDependency ([ba6f100](https://github.com/rezozero/nuxt-cache-control/commit/ba6f100))
+
+### ❤️ Contributors
+
+- Timothe Joubert <timothejoubert26@gmail.com>
+
 ## v0.1.7
 
 [compare changes](https://github.com/rezozero/nuxt-cache-control/compare/v0.1.6...v0.1.7)
