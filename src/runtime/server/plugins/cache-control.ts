@@ -26,11 +26,11 @@ export default (nitroApp: NitroApp) => {
       return
     }
     const cacheControl
-            = event.context.cacheControl
-              || ({
-                maxAge: 0,
-                public: false,
-              } as CacheControlOptions)
+      = event.context.cacheControl
+        || ({
+          maxAge: 0,
+          public: false,
+        } as CacheControlOptions)
     const cookies = parseCookies(event)
     const noCacheCookies = useRuntimeConfig().cacheControl.noCacheCookies || []
     const noCache = noCacheCookies.some((cookie: string) => cookies[cookie])
