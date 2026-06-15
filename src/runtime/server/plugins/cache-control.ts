@@ -1,5 +1,5 @@
 import type { CacheControlOptions } from '~/src/runtime/composables/use-cache-control'
-import { getResponseStatus, setResponseHeader, getQuery, parseCookies } from 'h3'
+import { getResponseStatus, setResponseHeader, getRequestURL, parseCookies } from 'h3'
 import type { NitroApp } from 'nitropack'
 import { useRuntimeConfig } from '#imports'
 
@@ -10,7 +10,7 @@ import { useRuntimeConfig } from '#imports'
  */
 export default (nitroApp: NitroApp) => {
   nitroApp.hooks.hook('render:response', (_response, { event }) => {
-    const qs = getQuery(event)
+    const qs = Object.fromEntries(getRequestURL(event).searchParams)
 
     if (getResponseStatus(event) !== 200) {
       setResponseHeader(event, 'Cache-Control', `private, no-cache, no-store, must-revalidate`)
